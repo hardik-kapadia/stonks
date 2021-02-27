@@ -30,17 +30,17 @@ def search(request):
 
 def get_single_stock(request):
     
-    # return render(request,'single_stock.html')
-    name = request.POST['name']
-    symbol = request.POST['symbol']
-    history = request.POST['history']
-    country = request.POST['country']
+    return render(request,'single_stock.html')
+    # name = request.POST['name']
+    # symbol = request.POST['symbol']
+    # history = request.POST['history']
+    # country = request.POST['country']
 
-    _stock = stock(name, symbol, history, country)
+    # _stock = stock(name, symbol, history, country)
 
-    print('Stock selected:', end=' ')
-    print(_stock.name, ' goes by ', _stock.symbol, ' in ', _stock.country)
-    print('History:')
-    print(history)
+    # print('Stock selected:', end=' ')
+    # print(_stock.name, ' goes by ', _stock.symbol, ' in ', _stock.country)
+    # print('History:')
+    # print(history)
     
-    return HttpResponse('<h1>Deadpool loves chimichaungas</h1>')
+    # return HttpResponse('<h1>Deadpool loves chimichaungas</h1>')
