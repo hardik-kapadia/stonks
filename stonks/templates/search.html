@@ -1,0 +1,16 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+{% for stock in stocks  %}
+<form action='single_stock' id='get_single_stock' method='post'>
+    {% csrf_token %}
+    <center>{{stock.name}} ({{stock.symbol}}) in {{stock.country}}
+        <input type='hidden' name='name' value={{stock.name}}>
+        <input type='hidden' name='symbol' value={{symbol}}>
+        <input type='hidden' name='history' value={{history}}>
+        <input type='hidden' name='country' value={{country}}>
+        <button type='submit' form='get_single_stock' class="btn btn-primary btm-sm"> GO </button>
+    </center>
+</form>
+{% endfor %}
+{% endblock %}

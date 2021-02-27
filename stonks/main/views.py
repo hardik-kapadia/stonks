@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from . import get_stocks
+from .models import *
 import stockquotes
 
 # Create your views here.
@@ -16,15 +17,26 @@ def index(request):
     #         print(stock.name)
     #     return HttpResponse("<h1> HEllo there </h1>")
     # else:
-        return render(request, 'index.html')
-
+    return render(request, 'index.html')
 
 
 def search(request):
 
     stock_name = request.POST['name']
-
     stocks = get_stocks.get_stock(stock_name)
 
-    return render(request, 'search.html',{'stocks':stocks})
+    return render(request, 'search.html', {'stocks': stocks})
 
+
+def get_single_stock(request):
+    name = request.POST['name']
+    symbol = request.POST['symbol']
+    history = request.POST['history']
+    country = request.POST['country']
+
+    _stock = stock(name, symbol, history, country)
+
+    print(_stock.name, _stock.symbol, _stock.country)
+    print(history)
+
+    return HttpResponse('<h1> General Kenobi </h1>')
