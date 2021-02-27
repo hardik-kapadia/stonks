@@ -101,33 +101,35 @@ section .header h1{
     transform: translate(-50% , -50%);
 }
 
-.contact{
-    margin: 1em;
+#contact{
+    margin: 0.4em;
+    background-color: #363636;
+    color: rgb(172, 196, 166);
 }
 
-.contact h1{
+#contact h1{
     text-align: center;
     font-size: 4em;
 }
   
 .col-sm-3{
-    background-color: #f093f5;
-    border: solid white 2px;
+    border: solid rgb(172, 196, 166) 2px;
 }
 
-.about{
-    margin: 1em;
+#about{
+    margin: 0.4em;
+    background-color: #242424;
+    color: rgb(196, 171, 171);
 }
 
-.about h1{
+#about h1{
     margin-top: 2em;
     text-align: center;
     font-size: 4em;
 }
 
-.about p{
+#about p{
     font-size: 3vh;
-    background-color: #f093f5;
 }
  
 /* @media screen and (width: 480px) {
