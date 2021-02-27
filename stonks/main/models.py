@@ -3,10 +3,10 @@ from django.db import models
 
 
 class stock:
-    def __init__(self, name, symbol, history, current_price, country):
+    def __init__(self, name, symbol, history, country):
         self.name = name
         self.symbol = symbol
-        self.current_price = current_price
+        # self.current_price = current_price
         self.history = history
         self.words = [symbol, self.name.split(' ')[0]]
         self.country = country

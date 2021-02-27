@@ -18,10 +18,9 @@ def get_stock(stockname):
         yfstock = yf.Ticker(symbol)
         hist = yfstock.history(period='7d')
 
-        apple = stockquotes.Stock('AAPL')
-        price = apple.current_price
+        # apple = stockquotes.Stock('AAPL')
+        # price = apple.current_price
 
-        print('Current price:', price)
 
         # try:
         #     current = si.get_live_price(symbol)
@@ -30,9 +29,7 @@ def get_stock(stockname):
         # except:
         #     continue
         
-        _stock = models.stock(name, symbol, hist,price, country)
+        _stock = models.stock(name, symbol, hist, country)
         stocks.append(_stock)
     return stocks
 
-
-get_stock('apple')
