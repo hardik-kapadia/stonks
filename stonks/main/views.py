@@ -29,6 +29,8 @@ def search(request):
 
 
 def get_single_stock(request):
+    
+    # return render(request,'single_stock.html')
     name = request.POST['name']
     symbol = request.POST['symbol']
     history = request.POST['history']
@@ -40,5 +42,5 @@ def get_single_stock(request):
     print(_stock.name, ' goes by ', _stock.symbol, ' in ', _stock.country)
     print('History:')
     print(history)
-
-    return HttpResponse('<h1> General Kenobi </h1>')
+    
+    return HttpResponse('<h1>Deadpool loves chimichaungas</h1>')
