@@ -156,6 +156,7 @@ section .header h1 {
     border: 3px solid #3b47e9;
     width: 80%;
     margin-left: 10% !important;
+    margin-bottom: 20px !important;
 }
 .go-button{
     text-align: center;
