@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Krona+One&display=swap');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Fredoka One', cursive;
 }
 
-body{
+body {
     min-height: 150vh;
 }
 
-section{
+section {
     position: relative;
     width: 100%;
     height: 100vh;
@@ -24,18 +24,18 @@ section{
     clip-path: circle(150vh at 50% -90%);
 }
 
-ul{
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
 }
-  
-li{
+
+li {
     float: right;
 }
-  
-li a{
+
+li a {
     display: block;
     padding: 8px;
     /* color: #37B9F1; */
@@ -44,34 +44,38 @@ li a{
     text-decoration: none;
 }
 
-li a:hover{
+li a:hover {
     color: white;
     transition: all 1s;
     text-decoration: none;
 }
 
-section .header{
+section .header {
     max-height: 1000vh;
     text-align: center;
 }
 
-section .header h1{
+section .header h1 {
     font-size: 10em;
     color: #3b47e9;
     font-weight: 700;
 }
 
-.search-box{
+.search-box {
     width: 100%;
     position: relative;
     display: flex;
 }
 
-.search-input{
+.former {
     width: 100%;
+}
+
+.search-input {
+    width: 90%;
     padding: 10px;
     border: 4px solid #1B1B1B;
-    border-radius:10px 0 0 10px ;
+    border-radius: 10px 0 0 10px;
     border-right: none;
     outline: none;
     font-size: 20px;
@@ -79,59 +83,59 @@ section .header h1{
     background: none;
 }
 
-.search-button{
+.search-button {
     text-align: center;
     height: 55px;
     width: 54px;
     outline: none;
     cursor: pointer;
     border: 4px solid rgb(27, 27, 27);
-    border-radius: 0 10px 10px 0 ;
+    border-radius: 0 10px 10px 0;
     border-left: none;
     background: none;
     font-size: 20px;
     border-left: 4px solid #1B1B1B;
 }
 
-.container{
+.container {
     width: 50%;
     position: absolute;
     left: 50%;
     top: 75%;
-    transform: translate(-50% , -50%);
+    transform: translate(-50%, -50%);
 }
 
-#contact{
+#contact {
     margin: 0.4em;
     background-color: #363636;
     color: rgb(172, 196, 166);
 }
 
-#contact h1{
+#contact h1 {
     text-align: center;
     font-size: 4em;
 }
-  
-.col-sm-3{
+
+.col-sm-3 {
     border: solid rgb(172, 196, 166) 2px;
 }
 
-#about{
+#about {
     margin: 0.4em;
     background-color: #242424;
     color: rgb(196, 171, 171);
 }
 
-#about h1{
+#about h1 {
     margin-top: 2em;
     text-align: center;
     font-size: 4em;
 }
 
-#about p{
+#about p {
     font-size: 3vh;
 }
- 
+
 /* @media screen and (width: 480px) {
     section .header h1{
     font-size: 5em;

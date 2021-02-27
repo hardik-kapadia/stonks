@@ -1,11 +1,12 @@
 import tweepy
 
-import config as conf
-import factor as fact
+from . import config as conf
+from . import factor as fact
 
-from models import Tweet
+from .models import Tweet
 
 from datetime import date
+
 
 def get_date():
     today = date.today()
@@ -38,17 +39,17 @@ def get_tweets(words):
                            since=date_s, tweet_mode='extended').items(20)
 
     tweets_list = get_proper_tweets(tweets)
-    
+
     return tweets_list
 
 
 def get_proper_tweets(tweets):
-    
+
     count = 0
-    
+
     for tweet in tweets:
 
-        count +=1
+        count += 1
         print(count)
 
         tweet_id = tweet.id
@@ -70,9 +71,10 @@ def get_proper_tweets(tweets):
 
         tweet_date = tweet.created_at
         tweet_date = str(tweet_date)[:10]
-        
+
         print(tweet_date)
 
-        _tweet = Tweet(tweet_id, name,user_id,text,likes,rts, tweet_date)
-        
+        _tweet = Tweet(tweet_id, name, user_id, text, likes, rts, tweet_date)
+
+
 tweets = get_tweets(['GME'])
