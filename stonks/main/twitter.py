@@ -1,9 +1,9 @@
 import tweepy
 
-from . import config as conf
-from . import factor as fact
+import calc.config as conf
+import calc.factor as fact
 
-from .models import Tweet
+from models import Tweet
 
 from datetime import date
 
@@ -36,7 +36,7 @@ def get_tweets(words):
     date_s = get_date()
 
     tweets = tweepy.Cursor(api.search, q=query, lang="en",
-                           since=date_s, tweet_mode='extended').items(20)
+                           since=date_s, tweet_mode='extended').items(50)
 
     tweets_list = get_proper_tweets(tweets)
 
@@ -45,17 +45,17 @@ def get_tweets(words):
 
 def get_proper_tweets(tweets):
 
-    count = 0
+    tweet_list = []
 
     for tweet in tweets:
-
-        count += 1
-        print(count)
 
         tweet_id = tweet.id
         user = tweet.user
         likes = tweet.favorite_count
         rts = tweet.retweet_count
+
+        if(int(likes) == 0 and int(rts) == 0):
+            continue
 
         user_id = user.id_str
         name = user.screen_name
@@ -72,9 +72,8 @@ def get_proper_tweets(tweets):
         tweet_date = tweet.created_at
         tweet_date = str(tweet_date)[:10]
 
-        print(tweet_date)
+        print("\nhere's the text:", text, '\n\n')
 
         _tweet = Tweet(tweet_id, name, user_id, text, likes, rts, tweet_date)
-
-
-tweets = get_tweets(['GME'])
+        tweet_list.append(_tweet)
+    return tweet_list

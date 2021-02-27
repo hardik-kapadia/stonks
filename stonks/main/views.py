@@ -38,9 +38,7 @@ def get_single_stock(request):
 
     print('Stock selected:', end=' ')
     print(_stock.name, ' goes by ', _stock.symbol, ' in ', _stock.country)
-    print(type(_stock.name), type(_stock.symbol), type(_stock.country))
     print('History:')
     print(history)
-    print(type(history))
 
     return HttpResponse('<h1> General Kenobi </h1>')
