@@ -1,0 +1,2 @@
+LIKE_FACTOR = 1.0
+RT_FACTOR = 1.5
