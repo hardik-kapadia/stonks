@@ -1,8 +1,8 @@
-import models
+from . import models
 import investpy
 import yfinance as yf
 import stockquotes
-import twitter
+from .import twitter
 
 # from yahoo_fin import stock_info as si
 

@@ -1,9 +1,9 @@
 import tweepy
 
-import calc.config as conf
-import calc.factor as fact
+from . import config as conf
+from . import factor as fact
 
-from models import Tweet
+from .models import Tweet
 
 # from datetime import date
 import datetime as DT
