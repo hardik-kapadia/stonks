@@ -3,45 +3,45 @@
 {% block content %}
 <!-- <div class="table">
     <div class="container search-table"> -->
-        <div class="row row-border" data-aos="fade-down">
-          <div class="col-md-3 column-border">
-            <h3>Name</h3>
-          </div>
-          <div class="col-md-3 column-border">
-            <h3>Symbol</h3>
-          </div>
-          <div class="col-md-3 column-border">
-            <h3>Country</h3>
-          </div>
-        </div>
-    <!-- </div>
+<div class="row row-border" data-aos="fade-down">
+  <div class="col-md-3 column-border">
+    <h3>Name</h3>
+  </div>
+  <div class="col-md-3 column-border">
+    <h3>Symbol</h3>
+  </div>
+  <div class="col-md-3 column-border">
+    <h3>Country</h3>
+  </div>
+</div>
+<!-- </div>
 </div> -->
 <br>
-{% if  stocks_found %}
 {% for stock in stocks  %}
 <form action='single_stock' id='get_single_stock' method='post'>
-    {% csrf_token %}
-    <div class="row row-border">
-        <div class="col-md-3 column-border" data-aos="fade-down">
-          <h3>{{stock.name}}</h3>
-        </div>
-        <div class="col-md-3 column-border" data-aos="fade-down">
-          <h3>{{stock.symbol}}</h3>
-        </div>
-        <div class="col-md-3 column-border" data-aos="fade-down"> 
-          <h3>{{stock.country}}</h3>
-        </div>
-        <div class="col-md-3">
-            <button class="go-button" type='submit' form='' data-aos="fade-down">
-                <i class="fas fa-arrow-right"></i>
-              </button>
-        </div>
+  {% csrf_token %}
+  <div class="row row-border">
+    <div class="col-md-3 column-border" data-aos="fade-down">
+      <h3>{{stock.name}}</h3>
     </div>
- </form>
+    <div class="col-md-3 column-border" data-aos="fade-down">
+      <h3>{{stock.symbol}}</h3>
+    </div>
+    <div class="col-md-3 column-border" data-aos="fade-down">
+      <h3>{{stock.country}}</h3>
+    </div>
+    <div class="col-md-3">
+      <button class="go-button" type='submit' form='get_single_stock' data-aos="fade-down">
+        <i class="fas fa-arrow-right"></i>
+      </button>
+    </div>
+  </div>
+  <input type='hidden' name='name' value={{stock.name}}>
+  <input type='hidden' name='symbol' value={{stock.symbol}}>
+  <input type='hidden' name='history' value={{stock.history}}>
+  <input type='hidden' name='country' value={{stock.country}}>
+</form>
 {% endfor %}
-{% else %}
-  <p> No Stock found </p>
-{% endif %}
 <br>
 <br>
 <br>

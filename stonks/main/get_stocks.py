@@ -20,7 +20,7 @@ def get_stock(stockname):
     counter = int(0)
     try:
         search_results = investpy.search_quotes(
-            text=stockname, products=['stocks'], n_results=2)
+            text=stockname, products=['stocks'], n_results=10)
     except RuntimeError:
         print('no stocks found')
         return None
@@ -31,11 +31,6 @@ def get_stock(stockname):
         yfstock = yf.Ticker(symbol)
         hist = yfstock.history(period='6d')
         
-        # for i, row in hist.iterrows():
-        #     print(str(i)[:10], row['Open'])
-
         _stock = models.stock(name, symbol, hist, country)
         stocks.append(_stock)
     return stocks
-
-# get_stock('Tesla')

@@ -5,11 +5,11 @@ import numpy as np
 import pandas as pd
 import re
 import nltk
-import twitter
-from models import Tweet, stock
-import get_stocks
+from . import twitter
+from .models import Tweet, stock
+from . import get_stocks
 
-from calc import factor as fact
+from . import factor as fact
 import datetime as DT
 
 from nltk.stem.wordnet import WordNetLemmatizer
@@ -193,7 +193,9 @@ def get_score(_stock_):
 
     future_price = current_price + result
     print('Predicted Price: %.2f' % future_price)
+    
+    return result,future_price,current_price
 
 
-stt = get_stocks.get_stock('Tesla')
-get_score(stt[0])
+# stt = get_stocks.get_stock('Tesla')
+# get_score(stt[0])

@@ -38,18 +38,18 @@ def get_tweets(words):
     print('This is the one: ', date_s)
 
     tweets = tweepy.Cursor(api.search, q=query, lang="en",
-                           since=date_s, tweet_mode='extended', result_type='popular').items(15)
+                           since=date_s, tweet_mode='extended', result_type='popular').items(8)
 
     tweets_list.extend(get_proper_tweets(tweets))
 
-    for i in range(1, 11):
+    for i in range(1, 10):
 
         date_s, date_e = get_date(i)
 
         # print("date: ", date_s, date_e)
 
         tweets = tweepy.Cursor(api.search, q=query, lang="en",
-                               since=date_s, until=date_e, tweet_mode='extended', result_type='popular').items(5)
+                               since=date_s, until=date_e, tweet_mode='extended', result_type='popular').items(4)
 
         tweets_list.extend(get_proper_tweets(tweets))
 
@@ -92,4 +92,4 @@ def get_proper_tweets(tweets):
     return tweet_list
 
 
-get_tweets(['GME'])
+# get_tweets(['GME'])

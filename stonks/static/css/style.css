@@ -15,7 +15,7 @@ section {
     position: relative;
     width: 100%;
     height: 90vh;
-    background: #1B1B1B;
+    background: #100F10;
     background-size: cover;
     /* display: flex; */
     background-attachment: fixed;
@@ -76,7 +76,7 @@ section .header h1 {
 .search-input {
     width: 90%;
     padding: 10px;
-    border: 4px solid #1B1B1B;
+    border: 4px solid #100F10;
     border-radius: 10px 0 0 10px;
     border-right: none;
     outline: none;
@@ -98,7 +98,7 @@ section .header h1 {
     border-left: none;
     background: none;
     font-size: 20px;
-    border-left: 4px solid #1B1B1B;
+    border-left: 4px solid #100F10;
 
 }
 
@@ -112,7 +112,7 @@ section .header h1 {
 
 #contact {
     margin: 0.4em;
-    background-color: #1B1B1B;
+    background-color: #100F10;
     color: #3b47e9;
     padding: 0.1% 2%;
 }
@@ -129,7 +129,7 @@ section .header h1 {
 #about {
     padding: 0 2%;
     margin: 0.4em;
-    background-color: #1B1B1B;
+    background-color: #100F10;
     color: #3b47e9;
 }
 
@@ -175,7 +175,7 @@ section .header h1 {
 }
 
 .go-button:hover{
-    background-color: #1B1B1B;
+    background-color: #100F10;
     transition: all 1s;
 }
 
