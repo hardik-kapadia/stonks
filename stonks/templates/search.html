@@ -17,6 +17,7 @@
     <!-- </div>
 </div> -->
 <br>
+{% if  stocks_found %}
 {% for stock in stocks  %}
 <form action='single_stock' id='get_single_stock' method='post'>
     {% csrf_token %}
@@ -36,15 +37,11 @@
               </button>
         </div>
     </div>
-    <!-- <center>{{stock.name}} ({{stock.symbol}}) in {{stock.country}}
-        <input type='hidden' name='name' value={{stock.name}}>
-        <input type='hidden' name='symbol' value={{stock.symbol}}>
-        <input type='hidden' name='history' value={{stock.history}}>
-        <input type='hidden' name='country' value={{stock.country}}>
-        <button type='submit' form='get_single_stock' class="btn btn-primary btm-sm"> GO </button>
-    </center> -->
  </form>
 {% endfor %}
+{% else %}
+  <p> No Stock found </p>
+{% endif %}
 <br>
 <br>
 <br>
