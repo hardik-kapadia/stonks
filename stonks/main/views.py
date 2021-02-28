@@ -25,7 +25,10 @@ def search(request):
     stock_name = request.POST['name']
     stocks = get_stocks.get_stock(stock_name)
 
-    return render(request, 'search.html', {'stocks': stocks})
+    if(stocks == None):
+        return render(request, 'search.html', {'stocks': stocks, 'stocks_found': False})
+
+    return render(request, 'search.html', {'stocks': stocks, 'stocks_found': True})
 
 
 def get_single_stock(request):
@@ -40,5 +43,7 @@ def get_single_stock(request):
     print(_stock.name, ' goes by ', _stock.symbol, ' in ', _stock.country)
     print('History:')
     print(history)
+
+    price = get_stocks.get_current_stock_price(symbol)
 
     return HttpResponse('<h1> General Kenobi </h1>')

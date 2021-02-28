@@ -5,18 +5,17 @@ import calc.factor as fact
 
 from models import Tweet
 
-from datetime import date
+# from datetime import date
+import datetime as DT
 
 
-def get_date():
-    today = date.today()
+def get_date(x: int):
+    today = DT.date.today()
 
-    c_date = str(today)[:-1]
-    a = int(str(today)[-1:]) - 7
+    s_date = today - DT.timedelta(days=x)
+    e_date = today - DT.timedelta(days=x - 1)
 
-    c_date += str(a)
-
-    return c_date
+    return str(s_date), str(e_date)
 
 
 def get_tweets(words):
@@ -33,12 +32,28 @@ def get_tweets(words):
         query += word+" OR "
     query = query[:-3]
 
-    date_s = get_date()
+    tweets_list = []
+
+    date_s, date_e = get_date(2)
+    print('This is the one: ', date_s)
 
     tweets = tweepy.Cursor(api.search, q=query, lang="en",
-                           since=date_s, tweet_mode='extended').items(50)
+                           since=date_s, tweet_mode='extended', result_type='popular').items(15)
 
-    tweets_list = get_proper_tweets(tweets)
+    tweets_list.extend(get_proper_tweets(tweets))
+
+    for i in range(1, 11):
+
+        date_s, date_e = get_date(i)
+
+        # print("date: ", date_s, date_e)
+
+        tweets = tweepy.Cursor(api.search, q=query, lang="en",
+                               since=date_s, until=date_e, tweet_mode='extended', result_type='popular').items(5)
+
+        tweets_list.extend(get_proper_tweets(tweets))
+
+    count = 1
 
     return tweets_list
 
@@ -72,8 +87,9 @@ def get_proper_tweets(tweets):
         tweet_date = tweet.created_at
         tweet_date = str(tweet_date)[:10]
 
-        print("\nhere's the text:", text, '\n\n')
-
         _tweet = Tweet(tweet_id, name, user_id, text, likes, rts, tweet_date)
         tweet_list.append(_tweet)
     return tweet_list
+
+
+get_tweets(['GME'])

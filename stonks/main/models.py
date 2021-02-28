@@ -6,7 +6,6 @@ class stock:
     def __init__(self, name, symbol, history, country):
         self.name = name
         self.symbol = symbol
-        # self.current_price = current_price
         self.history = history
         self.words = [symbol, self.name.split(' ')[0]]
         self.country = country
@@ -22,3 +21,6 @@ class Tweet:
         self.tweet_like_count = tweet_like_count
         self.tweet_rt_count = tweet_rt_count
         self.tweet_date = tweet_date
+
+    def set_score(self, score):
+        self.score = score
