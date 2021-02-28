@@ -83,6 +83,7 @@ section .header h1 {
     font-size: 20px;
     color: #3b47e9;
     background: none;
+    margin-top: 5%;
 
 }
 
@@ -111,8 +112,9 @@ section .header h1 {
 
 #contact {
     margin: 0.4em;
-    background-color: #363636;
-    color: rgb(172, 196, 166);
+    background-color: #1B1B1B;
+    color: #3b47e9;
+    padding: 0.1% 2%;
 }
 
 #contact h1 {
@@ -121,13 +123,14 @@ section .header h1 {
 }
 
 .col-sm-3 {
-    border: solid rgb(172, 196, 166) 2px;
+    border: solid #3b47e9 2px;
 }
 
 #about {
+    padding: 0 2%;
     margin: 0.4em;
-    background-color: #242424;
-    color: rgb(196, 171, 171);
+    background-color: #1B1B1B;
+    color: #3b47e9;
 }
 
 #about h1 {
@@ -183,3 +186,13 @@ section .header h1 {
     font-weight: 300;
     }
 } */
+
+.final-container{
+    margin-top: 100px;
+}
+
+.pic{
+    background: url("https://upload.wikimedia.org/wikipedia/commons/thumb/0/0e/Linear_Function_Graph.svg/1200px-Linear_Function_Graph.svg.png");
+    max-height: 100px;
+    max-width: 100px;
+}
