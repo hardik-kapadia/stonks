@@ -1,9 +1,9 @@
 # stonks
 Web App to predict stock prices using Social Media Sentiment.
 
-<h1>Stonks<h1>
+<center><h1>Stonks</h1></center>
 <hr>
-  
+ <br>
   
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
 ![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/thecoderenroute/stonks/blob/main/LICENSE)
