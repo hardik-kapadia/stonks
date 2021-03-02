@@ -1,13 +1,11 @@
-# stonks
 Web App to predict stock prices using Social Media Sentiment.
 
-<center><h1>Stonks</h1></center>
+<h1 align="center">Stonks</h1>
 <hr>
- <br>
-  
-[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
-![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/thecoderenroute/stonks/blob/main/LICENSE)
-[![Anurag's github stats](https://github-readme-stats.vercel.app/api?username=Naereen&theme=blue-green)](https://github.com/anuraghazra/github-readme-stats)
+<br>
+
+[![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)   
+[![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
 
 The name of our app is "Stonks" named after a popular internet catchphrase associated with financial gain and popularized during the Gamestop event.
 
