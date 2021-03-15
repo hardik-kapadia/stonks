@@ -1,3 +1,4 @@
 djvirtual
 .vscode/settings.json
 .vscode/*
+*.pyc
