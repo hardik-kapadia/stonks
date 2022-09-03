@@ -13,6 +13,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -24,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '06ui(cp1ml%))$r9ay=_n6yuq+or^jmp0mqcit^a^-53#+d=wm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -82,6 +85,7 @@ DATABASES = {
     }
 }
 
+CSRF_TRUSTED_ORIGINS = ["https://stonks.azurewebsites.net"]
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
