@@ -23,8 +23,8 @@ def get_tweets(words):
     auth = tweepy.OAuthHandler(conf.COSUMER_KEY, conf.CONSUMER_SECRET)
     auth.set_access_token(conf.ACCESS_TOKEN, conf.ACCESS_TOKEN_SECRET)
 
-    api = tweepy.API(auth, wait_on_rate_limit=True,
-                     wait_on_rate_limit_notify=True)
+    api = tweepy.API(auth, wait_on_rate_limit=True)
+    #  ,wait_on_rate_limit_notify=True)
 
     query = ""
 
@@ -37,7 +37,7 @@ def get_tweets(words):
     date_s, date_e = get_date(2)
     print('This is the one: ', date_s)
 
-    tweets = tweepy.Cursor(api.search, q=query, lang="en",
+    tweets = tweepy.Cursor(api.search_tweets, q=query, lang="en",
                            since=date_s, tweet_mode='extended', result_type='popular').items(8)
 
     tweets_list.extend(get_proper_tweets(tweets))
@@ -48,8 +48,8 @@ def get_tweets(words):
 
         # print("date: ", date_s, date_e)
 
-        tweets = tweepy.Cursor(api.search, q=query, lang="en",
-                               since=date_s, until=date_e, tweet_mode='extended', result_type='popular').items(4)
+        tweets = tweepy.Cursor(api.search_tweets, q=query, lang="en",
+                               since=date_s, until=date_e, tweet_mode='extended', result_type='popular',).items(4)
 
         tweets_list.extend(get_proper_tweets(tweets))
 
@@ -89,6 +89,7 @@ def get_proper_tweets(tweets):
 
         _tweet = Tweet(tweet_id, name, user_id, text, likes, rts, tweet_date)
         tweet_list.append(_tweet)
+
     return tweet_list
 
 

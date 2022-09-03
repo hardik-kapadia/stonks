@@ -3,7 +3,6 @@ from django.http import HttpResponse
 from . import get_stocks
 from . import scores
 from .models import *
-import stockquotes
 import yfinance as yf
 
 # Create your views here.
