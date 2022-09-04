@@ -17,6 +17,7 @@ from nltk.corpus import stopwords
 nltk.download('stopwords')
 nltk.download('wordnet')
 nltk.download('punkt')
+nltk.download('omw-1.4')
 
 
 def get_data(tweet):
@@ -60,13 +61,19 @@ class process:
             df['text'][i] = ' '.join(words)
 
     def predictionsentiment(self, tweet):
+        # print(f'Tweet senti....: ${tweet}')
         classifier = TextClassifier.load('en-sentiment')
         sentence = Sentence(tweet)
+        print(tweet)
         classifier.predict(sentence)
         x = str(sentence.labels[0])
+        # print(x)
         y = x.split(' ')
-        z = float(y[1][1:len(y[1])-1])
-        if(str(y[0]) == 'POSITIVE'):
+        # print(f'all of y :{y}')
+        # print(f'last of y---: -- {y[-1]}')
+        # print(f'second last of y---: -- {y[-2]}')
+        z = float(y[-1][1:-1])
+        if (str(y[-2]) == 'POSITIVE'):
             return z
         else:
             return (z*-1)
@@ -184,7 +191,7 @@ def get_score(_stock_):
 
     closing_price = 0
     current_price = get_stocks.get_current_stock_price(_stock_.symbol)
-    if(current_price == 0):
+    if (current_price == 0):
         m = hist['Close']
         closing_price = m[-1]
         current_price = closing_price
@@ -193,8 +200,8 @@ def get_score(_stock_):
 
     future_price = current_price + result
     print('Predicted Price: %.2f' % future_price)
-    
-    return result,future_price,current_price
+
+    return result, future_price, current_price
 
 
 # stt = get_stocks.get_stock('Tesla')
