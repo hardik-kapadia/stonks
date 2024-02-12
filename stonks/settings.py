@@ -29,7 +29,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '06ui(cp1ml%))$r9ay=_n6yuq+or^jmp0mqcit^a^-53#+d=wm'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -125,7 +125,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
-STATIC_URL = '/static/'
+import mimetypes
+mimetypes.add_type("text/css", ".css", True)
+
 STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
 
+print(f'Static files: {STATICFILES_DIRS}')
+
 STATIC_ROOT = os.path.join(BASE_DIR, "assets")
+STATIC_URL = '/static/'
+
+print(f'Looking for {STATIC_URL} in {STATIC_ROOT}')
